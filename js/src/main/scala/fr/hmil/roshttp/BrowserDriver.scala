@@ -40,11 +40,16 @@ private object BrowserDriver extends DriverTrait {
       if (xhr.readyState == dom.XMLHttpRequest.HEADERS_RECEIVED) {
         val headers = xhr.getAllResponseHeaders() match {
           case null => Map[String, String]()
-          case s: String => s.split("\r\n").map({ s =>
+          case s: String =>
+
+            println(s)
+            s.split("\r\n").map({ s =>
             val split = s.split(": ")
             (split.head, split.tail.mkString.trim)
           }).toMap[String, String]
         }
+
+        println(s"Hello, these are your headers: ${headers.mkString(", ")}")
 
         p.completeWith(
           factory(

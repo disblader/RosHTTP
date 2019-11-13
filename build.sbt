@@ -1,16 +1,17 @@
 name := "RösHTTP root project"
 
-crossScalaVersions := Seq("2.10.6", "2.11.11", "2.12.2")
+//crossScalaVersions := Seq("2.10.6", "2.11.11", "2.12.2")
+
+(scalaVersion in Global) := "2.12.8"
 
 lazy val root = project.in(file("."))
   .aggregate(scalaHttpJS, scalaHttpJVM)
 
 lazy val scalaHttp = crossProject.in(file("."))
-  .configureCross(InBrowserTesting.cross)
+//  .configureCross(InBrowserTesting.cross)
   .settings(
     name := "roshttp",
-    version := "2.2.3",
-    scalaVersion := "2.11.11",
+    version := "2.2.3-VTSL-DEV",
     organization := "fr.hmil",
     licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
     homepage := Some(url("http://github.com/hmil/RosHTTP")),
@@ -41,6 +42,8 @@ lazy val scalaHttp = crossProject.in(file("."))
   .jsSettings(
     // js-specific settings
     libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.1",
+
+    scalaVersion := "2.12.8",
 
     jsEnv := NodeJSEnv().value
   )
