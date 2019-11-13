@@ -1,6 +1,6 @@
 # RösHTTP
 [![Build Status](https://travis-ci.org/hmil/RosHTTP.svg?branch=master)](https://travis-ci.org/hmil/RosHTTP)
-[![Latest release](https://hmil.github.io/RosHTTP/version-badge.svg)](https://github.com/hmil/RosHTTP)
+[![Latest version on jcenter](https://img.shields.io/maven-metadata/v/https/jcenter.bintray.com/fr/hmil/roshttp_2.12/maven-metadata.xml.svg?label=latest+version)](https://jcenter.bintray.com/fr/hmil/roshttp_2.12/)
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.8.svg)](https://www.scala-js.org)
 
 A human-readable scala http client API compatible with:
@@ -15,13 +15,14 @@ Add a dependency in your build.sbt:
 
 ```
 Resolver.bintrayRepo("hmil", "maven")
-libraryDependencies += "fr.hmil" %%% "roshttp" % "2.2.3"
+libraryDependencies += "fr.hmil" %%% "roshttp" % "2.2.4"
 ```
 
 # Usage
 
 The following is a simplified usage guide. You may find useful information in
 the [API doc](http://hmil.github.io/RosHTTP/docs/index.html) too.
+
 ## Basic usage
 
 ```scala
@@ -388,7 +389,11 @@ Please read the [contributing guide](https://github.com/hmil/RosHTTP/blob/master
 
 # Changelog
 
-**v2.2.0***
+**v2.2.4**
+
+- Update to monix v2.3.3
+
+**v2.2.0**
 
 - Add withCrossDomainCookies (by @nondeterministic)
 
